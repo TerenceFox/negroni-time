@@ -1,9 +1,8 @@
 import React from "react"
-import styles from "./header.module.css"
+import styles from "./header-footer.module.css"
 
 function Header(props) {
     const { hours, days } = props.restaurantDetails
-    console.log(styles.details)
     return (
         <header>
             <span className={styles.details}>{hours}</span>
