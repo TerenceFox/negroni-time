@@ -1,0 +1,11 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  background: pink;
+}
+
+h1 {
+  text-align: center;
+}
