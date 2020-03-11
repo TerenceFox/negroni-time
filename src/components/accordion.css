@@ -1,0 +1,24 @@
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background: none;
+  height: auto;
+}
+
+.content{
+  overflow: hidden;
+  transition: max-height .75s ease;
+}
+
+.active {
+  background: purple;
+}

@@ -1,15 +1,15 @@
 import React from "react"
-
+import Accordion from "./Accordion"
 import styles from "./main.module.css"
+import data from "../services/data"
 
 function Main() {
-    return (
-        <main className={styles.menu}>
-            <h1>menus</h1>
-            <h1>negroni time</h1>
-            <h1>reservations</h1>
-        </main>
-    )
+
+  return (
+    <main className={styles.main}>
+      <Accordion title="menu" content={data} />
+    </main>
+  )
 }
 
 export default Main
