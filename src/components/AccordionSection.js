@@ -9,11 +9,7 @@ function AccordionSection(props) {
   const [height, setHeight] = useState("0px")
   const content = useRef(null)
 
-  function toggleAccordion() {
-    setHeight(active === "active" ? `${content.current.scrollHeight}px` : "0px")
-  }
-
-  useEffect(toggleAccordion, [active])
+  
   
   return (
     <div className="accordion__section">

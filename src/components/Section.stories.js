@@ -6,7 +6,7 @@ export default {
   component: Section,
   title: "Section",
   // Our exports that end in "Data" are not stories.
-  excludeStories: /.*Data$/
+  excludeStories: /.*Data$/,
 }
 
 export const htmlData = `<h3>the negroni - 12</h3>
@@ -19,4 +19,13 @@ export const htmlData = `<h3>the negroni - 12</h3>
 
 export const titleData = "negronis"
 
-export const Default = () => <Section title={titleData} html={htmlData} />
+export const openStateData = "OPEN"
+
+export const closedStateData = "CLOSED"
+
+export const Default = () => (
+  <Section title={titleData} html={htmlData} state={closedStateData} />
+)
+export const Open = () => (
+  <Section title={titleData} html={htmlData} state={openStateData} />
+)

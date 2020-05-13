@@ -1,0 +1,4 @@
+.content {
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
