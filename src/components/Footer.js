@@ -1,25 +1,8 @@
 import React from "react"
 import styles from "./header-footer.module.css"
-import { useStaticQuery, graphql } from "gatsby"
 
-function Footer() {
-  const data = useStaticQuery(graphql`
-    query FooterQuery {
-      allMarkdownRemark(filter: { frontmatter: { name: { eq: "details" } } }) {
-        edges {
-          node {
-            html
-            frontmatter {
-              phone
-              email
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const { phone, email } = data.allMarkdownRemark.edges[0].node.frontmatter
+const Footer = (props) => {
+  const { phone, email } = props.businessDetails
   return (
     <footer>
       <span className={styles.details}>
