@@ -5,5 +5,27 @@
  */
 
 module.exports = {
-  plugins: [`gatsby-plugin-sass`]
+  plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-remove-root-p-tag`,
+            options: {
+              parents: ["default-site-plugin"],
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+  ],
 }

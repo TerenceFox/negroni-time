@@ -1,15 +1,10 @@
 import React from "react"
-import Accordion from "./Accordion"
+import Header from "../components/Header"
 import styles from "./main.module.css"
-import data from "../services/data"
 
-function Main() {
-
-  return (
-    <main className={styles.main}>
-      <Accordion title="menu" content={data} />
-    </main>
-  )
+const Main = () => {
+  return <main className={styles.main}>
+  </main>
 }
 
 export default Main
