@@ -1,8 +1,8 @@
 ---
-name: "negronis"
+name: "not-negronis"
 type: "menu"
 date: "2020-05-13"
-title: "negronis"
+title: "not negronis"
 ---
 
 ### the negroni - 12

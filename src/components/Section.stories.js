@@ -1,5 +1,4 @@
 import React from "react"
-import { action } from "@storybook/addon-actions"
 
 import Section from "./Section"
 
@@ -7,8 +6,17 @@ export default {
   component: Section,
   title: "Section",
   // Our exports that end in "Data" are not stories.
-  excludeStories: /.*Data$/,
+  excludeStories: /.*Data$/
 }
 
+export const htmlData = `<h3>the negroni - 12</h3>
 
-export const Default = () => <Section />
+<p>gin/campari/vermount</p>
+
+<h3>the other negroni - 12</h3>
+
+<p>gin/campari/vermouth</p>`
+
+export const titleData = "negronis"
+
+export const Default = () => <Section title={titleData} html={htmlData} />
