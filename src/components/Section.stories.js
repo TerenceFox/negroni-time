@@ -1,6 +1,7 @@
 import React from "react"
 
 import Section from "./Section"
+import { action } from "@storybook/addon-actions"
 
 export default {
   component: Section,
@@ -23,9 +24,24 @@ export const openStateData = "OPEN"
 
 export const closedStateData = "CLOSED"
 
-export const Default = () => (
-  <Section title={titleData} html={htmlData} state={closedStateData} />
+export const actionsData = {
+  onToggleSection: action("onToggleSection"),
+}
+
+export const Closed = () => (
+  <Section
+    title={titleData}
+    html={htmlData}
+    state={closedStateData}
+    {...actionsData}
+  />
 )
+
 export const Open = () => (
-  <Section title={titleData} html={htmlData} state={openStateData} />
+  <Section
+    title={titleData}
+    html={htmlData}
+    state={openStateData}
+    {...actionsData}
+  />
 )

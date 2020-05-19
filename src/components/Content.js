@@ -5,8 +5,8 @@ const Content = React.forwardRef((props, ref) => {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: html }}
+      style={{ maxHeight: `${height}px`, overflow: "hidden" }}
       className="content"
-      style={{maxHeight: `${height}px`}}
       ref={ref}
     ></div>
   )

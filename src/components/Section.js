@@ -3,18 +3,19 @@ import Content from "./Content"
 import styles from "./section.module.css"
 
 const Section = (props) => {
+  const {title, html, state, onToggleSection } = props
   const [height, setHeight] = useState(0)
   const ref = createRef()
-  const {title, html, state} = props
-  
+ 
+
   useEffect(() => {
     setHeight(state === "OPEN" ? ref.current.scrollHeight : 0)
-  }, [])
+  }, [state])
 
   return (
     <>
-      <h3>{title}</h3>
-      <Content html={html} height={height} ref={ref}/>
+      <h2 onClick={() => onToggleSection(title)}>{title}</h2>
+      <Content html={html} height={height} ref={ref} />
     </>
   )
 }
