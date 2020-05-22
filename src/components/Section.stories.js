@@ -1,10 +1,11 @@
 import React from "react"
-
-import Section from "./Section"
+import SectionToggle from "./SectionToggle"
+import SectionContent from "./SectionContent"
+import SectionContainer from "./SectionContainer"
 import { action } from "@storybook/addon-actions"
 
 export default {
-  component: Section,
+  component: Open,
   title: "Section",
   // Our exports that end in "Data" are not stories.
   excludeStories: /.*Data$/,
@@ -20,28 +21,26 @@ export const htmlData = `<h3>the negroni - 12</h3>
 
 export const titleData = "negronis"
 
-export const openStateData = "OPEN"
-
-export const closedStateData = "CLOSED"
-
 export const actionsData = {
-  onToggleSection: action("onToggleSection"),
+  onToggle: action("onToggle"),
 }
 
-export const Closed = () => (
-  <Section
-    title={titleData}
-    html={htmlData}
-    state={closedStateData}
-    {...actionsData}
-  />
+export const Open = () => (
+  <>
+  <SectionContainer>
+    <SectionToggle title={titleData} eventKey={1} {...actionsData} />
+    <SectionContent html={htmlData} eventKey={1} activeEventKey={1} />
+  </SectionContainer>
+  <SectionContainer>
+    <SectionToggle title={titleData} eventKey={1} {...actionsData} />
+    <SectionContent html={htmlData} eventKey={2} activeEventKey={1} />
+  </SectionContainer>
+  </>
 )
 
-export const Open = () => (
-  <Section
-    title={titleData}
-    html={htmlData}
-    state={openStateData}
-    {...actionsData}
-  />
+export const Closed = () => (
+  <SectionContainer>
+    <SectionToggle title={titleData} eventKey={1} {...actionsData} />
+    <SectionContent html={htmlData} eventKey={1} activeEventKey={0} />
+  </SectionContainer>
 )

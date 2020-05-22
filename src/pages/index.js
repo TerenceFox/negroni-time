@@ -4,7 +4,7 @@ import Main from "../components/Main"
 import Footer from "../components/Footer"
 import Div100vh from "react-div-100vh"
 import { graphql } from "gatsby"
-import "./index.css"
+import "../styles/main.scss"
 
 const App = ({ data }) => {
   const { businessDetails } = data.site.siteMetadata

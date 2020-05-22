@@ -1,4 +1,5 @@
-import React, { useReducer } from "react"
+import React, { useReducer, useState } from "react"
+import SectionContainer from "./SectionContainer"
 import Section from "./Section"
 
 const init = (menuData) => {
@@ -6,7 +7,7 @@ const init = (menuData) => {
     if (!menu.state) {menu.state = "CLOSED"}
     return menu
   })
-} 
+}
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -28,22 +29,28 @@ const reducer = (state, action) => {
 
 const Menu = ({ menuData }) => {
   const [menuList, dispatch ] = useReducer(reducer, menuData, init)
-
+  const [toggle, setToggle ] = useState(false)
   const onToggleSection = title => {
     dispatch({type: 'TOGGLE', payload: title})
   }
 
+  const onClick = () => setToggle(!toggle)
+
   return (
-    <>
-      {menuList.map(menu => (
-        <Section
-          title={menu.node.frontmatter.title}
-          html={menu.node.html}
-          state={menu.state}
-          onToggleSection={onToggleSection}
-        />
-      ))}
-    </>
+    <div>
+      <h2 onClick={onClick}>Menus</h2>
+      {toggle &&
+        menuList.map(menu => (
+
+            <SectionContainer
+              title={menu.node.frontmatter.title}
+              state={menu.state}
+              onToggleSection={onToggleSection}
+            >
+              <Section html={menu.node.html} />
+            </SectionContainer>
+        ))}
+    </div>
   )
 }
 
