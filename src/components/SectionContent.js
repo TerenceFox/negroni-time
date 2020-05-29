@@ -34,7 +34,6 @@ const SectionContent = props => {
     content.children = children
   }
 
-  console.log(content)
   return (
     <CSSTransition
       in={eventKey === activeEventKey}

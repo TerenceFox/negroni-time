@@ -25,7 +25,7 @@ const Menu = () => {
   return (
     <MenuContextProvider Context={context}>
       {sections.map((section, index) => (
-        <SectionContainer>
+        <SectionContainer key={index}>
           <SectionToggle
             title={section.node.frontmatter.title}
             eventKey={index}

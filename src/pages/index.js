@@ -12,7 +12,7 @@ const App = ({ data }) => {
     <div>
       <Header businessDetails={businessDetails} />
       <Div100vh className="container">
-        <Main />
+        <Main name={businessDetails.name}/>
       </Div100vh>
       <Footer businessDetails={businessDetails} />
     </div>

@@ -30,7 +30,7 @@ module.exports = {
   ],
   siteMetadata: {
     businessDetails: {
-      name: "details",
+      name: "negroni time",
       hours: "2-11pm",
       days: "every day",
       address: "1234 pizza st.",
