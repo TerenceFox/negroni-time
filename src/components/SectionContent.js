@@ -5,7 +5,6 @@ const SectionContent = props => {
   const { children, eventKey, context, html } = props
   const { activeEventKey } = useContext(context)
   const duration = 300
-  const isAppearing = true
 
   const onEnter = (node) => {
     node.style.marginTop = `-${node.offsetHeight}px`
