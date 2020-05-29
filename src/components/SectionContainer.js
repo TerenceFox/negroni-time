@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const SectionContainer = ({ children }) => {
-  const [activeEventKey, setActiveEventKey] = useState(0)
-  return (
+const SectionContainer = ({ children }) =>  (
     <div className="section container">
       {children}
     </div>
   )
-}
 
 export default SectionContainer

@@ -41,22 +41,39 @@ footer {
   padding: 0.5em 1em;
 }
 
+main {
+  margin: auto;
+}
 
-
-.section-appear.section-appear-active {
-    transition: opacity 400ms ease-in, margin 300ms ease-out;
+.section-enter.section-enter-active {
+    transition: opacity 300ms ease-in, margin 300ms ease-out;
 }
 
 .section-exit.section-exit-active {
-    transition: opacity 400ms ease-out, margin 300ms ease-in;
+    transition: opacity 300ms ease-out, margin 300ms ease-in;
 }
 
-.section-appear,
+.section-enter,
 .section-exit.section-exit-active {
     opacity: 0;
 }
 
-.section-appear.section-appear-active,
+.section-enter.section-enter-active,
 .section-exit {
     opacity: 1;
+}
+
+.section {
+  text-align: center;
+}
+
+.section--title {
+  background: inherit;
+  position: relative;
+  z-index: 100;
+}
+
+.section--content {
+  position: relative;
+  z-index: 1;
 }

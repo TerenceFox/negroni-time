@@ -1,56 +1,45 @@
-import React, { useReducer, useState } from "react"
+import React from "react"
+import MenuContextProvider from "./MenuContextProvider"
+import SectionToggle from "./SectionToggle"
+import SectionContent from "./SectionContent"
 import SectionContainer from "./SectionContainer"
-import Section from "./Section"
+import { useStaticQuery, graphql } from "gatsby"
 
-const init = (menuData) => {
-  return menuData.map(menu => {
-    if (!menu.state) {menu.state = "CLOSED"}
-    return menu
-  })
-}
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "TOGGLE": {
-      const newArr = state.map(menu => {
-        if (menu.node.frontmatter.title === action.payload) {
-          menu.state = menu.state === "CLOSED" ? "OPEN" : "CLOSED"
-        } else {
-          menu.state = "CLOSED"
+const Menu = () => {
+  const context = React.createContext()
+  const data = useStaticQuery(graphql`
+    query MenuQuery {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "menu" } } }) {
+        edges {
+          node {
+            html
+            frontmatter {
+              title
+            }
+          }
         }
-        return menu
-      })
-      return newArr
+      }
     }
-    default:
-      throw new Error()
-  }
-}
-
-const Menu = ({ menuData }) => {
-  const [menuList, dispatch ] = useReducer(reducer, menuData, init)
-  const [toggle, setToggle ] = useState(false)
-  const onToggleSection = title => {
-    dispatch({type: 'TOGGLE', payload: title})
-  }
-
-  const onClick = () => setToggle(!toggle)
-
+  `)
+  const sections = data.allMarkdownRemark.edges
   return (
-    <div>
-      <h2 onClick={onClick}>Menus</h2>
-      {toggle &&
-        menuList.map(menu => (
-
-            <SectionContainer
-              title={menu.node.frontmatter.title}
-              state={menu.state}
-              onToggleSection={onToggleSection}
-            >
-              <Section html={menu.node.html} />
-            </SectionContainer>
-        ))}
-    </div>
+    <MenuContextProvider Context={context}>
+      {sections.map((section, index) => (
+        <SectionContainer>
+          <SectionToggle
+            title={section.node.frontmatter.title}
+            eventKey={index}
+            context={context}
+          />
+          <SectionContent
+            eventKey={index}
+            context={context}
+            html={section.node.html}
+          >
+          </SectionContent>
+        </SectionContainer>
+      ))}
+    </MenuContextProvider>
   )
 }
 

@@ -1,31 +1,40 @@
-import React from "react"
+import React, { useContext } from "react"
 import { CSSTransition } from "react-transition-group"
 
 const SectionContent = props => {
-  const { html, eventKey, activeEventKey } = props
+  const { children, eventKey, context, html } = props
+  const { activeEventKey } = useContext(context)
+  const duration = 300
+  const isAppearing = true
 
-  const duration = 400
-
-  const onEnter = node => {
+  const onEnter = (node) => {
     node.style.marginTop = `-${node.offsetHeight}px`
     node.style.marginBottom = `0px`
   }
 
-  const onEntering = node => {
+  const onEntering = (node) => {
     node.style.marginTop = ""
     node.style.marginBottom = ""
   }
 
-  const onExit = node => {
+  const onExit = (node ) => {
     node.style.marginTop = ""
     node.style.marginBottom = ""
   }
 
-  const onExiting = node => {
+  const onExiting = (node) => {
     node.style.marginTop = `-${node.offsetHeight}px`
     node.style.marginBottom = `0px`
   }
 
+  const content = {};
+  if (html) {
+    content.dangerouslySetInnerHTML = {__html: html}
+  } else {
+    content.children = children
+  }
+
+  console.log(content)
   return (
     <CSSTransition
       in={eventKey === activeEventKey}
@@ -39,7 +48,10 @@ const SectionContent = props => {
       mountOnEnter={true}
       unmountOnExit={true}
     >
-      <div className="section--content" dangerouslySetInnerHTML={{ __html: html }}></div>
+      <div
+        className="section--content"
+        {...content}
+      ></div>
     </CSSTransition>
   )
 }
