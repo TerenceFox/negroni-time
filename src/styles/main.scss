@@ -77,3 +77,22 @@ main {
   position: relative;
   z-index: 1;
 }
+
+.blob {
+  animation: rotation 300s infinite linear;
+  z-index: -1;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  height: 125vh;
+  width: 125vw;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

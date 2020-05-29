@@ -5,6 +5,7 @@ import Footer from "../components/Footer"
 import Div100vh from "react-div-100vh"
 import { graphql } from "gatsby"
 import "../styles/main.scss"
+import Blob from "../../static/blob.svg"
 
 const App = ({ data }) => {
   const { businessDetails } = data.site.siteMetadata
@@ -14,6 +15,7 @@ const App = ({ data }) => {
       <Div100vh className="container">
         <Main name={businessDetails.name}/>
       </Div100vh>
+      <Blob className="blob" />
       <Footer businessDetails={businessDetails} />
     </div>
   )
