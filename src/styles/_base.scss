@@ -61,6 +61,12 @@ main {
 
 // Menu layout
 
+.section--content {
+  text-align: center;
+  justify-self: center;
+}
+
+
 @media (min-width: 800px) {
   .menu {
     display: grid;
@@ -68,12 +74,11 @@ main {
     margin-left: 4em;
     margin-right: 4em;
   }
+  .section.container {
+    justify-content: start;
+  }
 }
 
-.section--content {
-  text-align: center;
-  justify-self: center;
-}
 
 .section--title {
   cursor: pointer;
@@ -84,4 +89,9 @@ main {
 .section--main {
   padding: 0;
   padding-bottom: 1em;
+}
+
+.reservations {
+  max-width: 400px;
+  margin: auto;
 }

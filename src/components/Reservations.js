@@ -23,11 +23,9 @@ const Reservations = ({context, eventKey}) => {
   const html = data.allMarkdownRemark.edges[0].node.html
   console.log(html)
   return (
-    <SectionContent
-      eventKey={eventKey} 
-      context={context}
-      html={html}
-    /> 
+    <div className="reservations">
+      <SectionContent eventKey={eventKey} context={context} html={html} />
+    </div>
   )
 }
 
