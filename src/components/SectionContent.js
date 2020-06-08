@@ -1,9 +1,10 @@
-import React, { useContext } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { CSSTransition } from "react-transition-group"
 
 const SectionContent = props => {
   const { children, eventKey, context, html } = props
   const { activeEventKey } = useContext(context)
+  const [windowSize, setWindowSize ] = useState(window.innerWidth)
   const duration = 300
 
   const onEnter = (node) => {
@@ -34,23 +35,20 @@ const SectionContent = props => {
   }
 
   return (
-    <CSSTransition
-      in={eventKey === activeEventKey}
-      appear={true}
-      classNames="section"
-      timeout={duration}
-      onEnter={onEnter}
-      onEntering={onEntering}
-      onExit={onExit}
-      onExiting={onExiting}
-      mountOnEnter={true}
-      unmountOnExit={true}
-    >
-      <div
-        className="section--content"
-        {...content}
-      ></div>
-    </CSSTransition>
+        <CSSTransition
+          in={eventKey === activeEventKey}
+          appear={true}
+          classNames="section"
+          timeout={duration}
+          onEnter={onEnter}
+          onEntering={onEntering}
+          onExit={onExit}
+          onExiting={onExiting}
+          mountOnEnter={true}
+          unmountOnExit={true}
+        >
+          <div className="section--content" {...content}></div>
+        </CSSTransition>
   )
 }
 

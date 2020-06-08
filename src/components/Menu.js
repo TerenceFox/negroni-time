@@ -23,7 +23,7 @@ const Menu = () => {
   `)
   const sections = data.allMarkdownRemark.edges
   return (
-    <MenuContextProvider Context={context} startingPosition={null}>
+    <MenuContextProvider Context={context}>
       {sections.map((section, index) => (
         <SectionContainer key={index}>
           <SectionToggle eventKey={index} context={context}>
