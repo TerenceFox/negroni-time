@@ -12,13 +12,13 @@ const SectionContent = props => {
   }
 
   const onEntering = (node) => {
-    node.style.marginTop = ""
-    node.style.marginBottom = ""
+    node.style.marginTop = "0px"
+    node.style.marginBottom = "0px"
   }
 
   const onExit = (node ) => {
-    node.style.marginTop = ""
-    node.style.marginBottom = ""
+    node.style.marginTop = "0px"
+    node.style.marginBottom = "0px"
   }
 
   const onExiting = (node) => {

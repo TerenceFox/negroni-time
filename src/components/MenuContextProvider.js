@@ -4,7 +4,7 @@ const MenuContextProvider = ({children, Context}) => {
     const [ activeEventKey, setActiveEventKey ] = useState(null)
 
   return (
-    <Context.Provider value={{activeEventKey, setActiveEventKey}}>
+    <Context.Provider value={{activeEventKey, setActiveEventKey }}>
       {children}
     </Context.Provider>
   )

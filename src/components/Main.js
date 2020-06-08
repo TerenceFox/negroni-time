@@ -12,17 +12,21 @@ const Main = ({ name }) => {
     <main>
       <MenuContextProvider Context={context}>
         <SectionContainer>
-          <SectionToggle title={"menu"} eventKey={0} context={context} />
+          <SectionToggle eventKey={0} context={context}>
+            <h2>menus</h2>
+          </SectionToggle>
           <SectionContent eventKey={0} context={context}>
             <Menu />
           </SectionContent>
         </SectionContainer>
+        <SectionToggle eventKey={1} context={context}>
+          <h1>{name}</h1>
+        </SectionToggle>
         <SectionContainer>
-          <SectionToggle title={name} eventKey={1} context={context} />
-        </SectionContainer>
-        <SectionContainer>
-          <SectionToggle title={"reservations"} eventKey={2} context={context} />
-          <Reservations context={context} eventKey={2}/>
+          <SectionToggle eventKey={2} context={context}>
+            <h2>reservations</h2>
+          </SectionToggle>
+          <Reservations context={context} eventKey={2} />
         </SectionContainer>
       </MenuContextProvider>
     </main>

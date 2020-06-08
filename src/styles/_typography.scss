@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Fadoli';
+  src: url('../fonts/Fadoli-Trial-Bold.otf') format("opentype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Fadoli';
+  src: url('../fonts/Fadoli-Trial-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'AuthenticSans';
+  src: url('../fonts/AUTHENTICSans-60.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'AuthenticSans';
+  src: url('../fonts/AUTHENTICSans-150.otf') format('opentype');
+  font-weight: 600;
+}
+
+@mixin body-font() {
+  font-size: .8rem;
+  letter-spacing: .3em;
+  line-height: 1.4em;
+  font-family: 'AuthenticSans';
+  color: $white;
+  margin-bottom: 1em;
+}
+
+body {
+  font-weight: 400;
+  @include body-font();
+}
+
+a {
+  text-decoration: none;
+  color: $accent2;
+}
+
+
+@mixin headers() {
+  height: 100%;
+  font-family: 'Fadoli';
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600; 
+  color: $accent;
+  text-align: center;
+  @include headers();
+  
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600; 
+  color: $accent;
+  @include headers();
+  
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: $white;
+  letter-spacing: .2em;
+  @include headers();
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: .6em;
+  text-transform: uppercase;
+  @include body-font();
+  
+}
+
+.active >  h2 {
+  color: $white;
+}
+
+.active > h3 {
+  font-size: 2.3rem;
+  line-height: 2rem;
+}
+
+p {
+  margin-bottom: 2em;
+}
+
+.details {
+  font-size: .8rem;
+  letter-spacing: .2em;
+  color: $accent2;
+  text-transform: uppercase;
+}

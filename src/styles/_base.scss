@@ -1,0 +1,65 @@
+// Basic stuff
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: $bg;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+// Header and footer layout
+
+header,
+footer {
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+.details {
+  padding: 0.5em 1em;
+}
+
+// Main layout
+
+main {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// Menu layout
+.section--content {
+  text-align: center;
+}
+
+.section--title {
+  cursor: pointer;
+  text-align: center;
+  padding: 1.5em 0;
+}

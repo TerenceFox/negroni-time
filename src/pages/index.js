@@ -10,13 +10,12 @@ import blob from "../assets/blob1.svg"
 const App = ({ data }) => {
   const { businessDetails } = data.site.siteMetadata
   return (
-    <div className="wrapper" style={{ backgroundImage: `url(${blob})` }}>
+    <>
+    <div className="background" style={{ backgroundImage: `url(${blob})` }}></div>
       <Header businessDetails={businessDetails} />
-      <Div100vh className="container">
-        <Main name={businessDetails.name} />
-      </Div100vh>
+      <Main name={businessDetails.name} />
       <Footer businessDetails={businessDetails} />
-    </div>
+      </>
   )
 }
 

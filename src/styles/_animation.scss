@@ -1,0 +1,32 @@
+// Blob animations
+.background {
+  position: absolute;
+  height: 150vh;
+  width: 150vw;
+  mix-blend-mode: multiply;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: center;
+  clear: both;
+  width: 100%;
+  margin: 0;
+  padding: 30px 0 0;
+}
+
+.section-enter.section-enter-active {
+  transition: opacity 300ms cubic-bezier(.94,-0.04,.88,.68), margin 300ms ease-out;
+}
+
+.section-exit.section-exit-active {
+  transition: opacity 300ms cubic-bezier(.32,.7,.26,1), margin 300ms ease-in;
+}
+
+.section-enter,
+.section-exit.section-exit-active {
+  opacity: 0;
+}
+
+.section-enter.section-enter-active,
+.section-exit {
+  opacity: 1;
+}
