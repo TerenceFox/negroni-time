@@ -20,11 +20,16 @@ img {
   height: auto;
 }
 
+.wrapper {
+  margin: auto;
+  max-width: 1200px;
+  height: 100vh;
+}
+
 // Header and footer layout
 
 header,
 footer {
-  position: fixed;
   width: 100%;
   margin: 0;
   display: flex;
@@ -53,7 +58,6 @@ footer {
 
 main {
   position: relative;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
