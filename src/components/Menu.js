@@ -6,9 +6,10 @@ import SectionContainer from "./SectionContainer"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Menu = () => {
-  const [windowSize, setWindowSize] = useState(window.innerWidth)
+  const [windowSize, setWindowSize] = useState()
 
   useEffect(() => {
+    setWindowSize(window.innerWidth)
     let timeoutId = null
     const resizeListener = () => {
       // prevent execution of previous setTimeout

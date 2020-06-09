@@ -3,30 +3,33 @@
   position: absolute;
   height: 100vh;
   width: 100vw;
+}
+
+.blob {
+  height: 100vh;
+  width: 100vh;
   mix-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: center;
   background-position: -100px -200px;
-  clear: both;
-  margin: auto;
 }
 
 @media (min-width: 1024px) {
   .background {
-    position: absolute;
-    left: 20%;
-    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .blob {
     height: 1000px;
     width: 1000px;
     mix-blend-mode: multiply;
     background-repeat: no-repeat;
-    background-position: 0;
+    background-position: center;
     background-size: contain;
-    clear: both;
     margin: auto;
   }
 }
-
 
 .section-enter.section-enter-active {
   transition: opacity 300ms cubic-bezier(0.94, -0.04, 0.88, 0.68),

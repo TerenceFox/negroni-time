@@ -10,11 +10,13 @@ const App = ({ data }) => {
   const { businessDetails } = data.site.siteMetadata
   return (
     <>
-    <div className="background" style={{ backgroundImage: `url(${blob})` }}></div>
-    <div className="wrapper container">
-      <Header businessDetails={businessDetails} />
-      <Main name={businessDetails.name} />
-      <Footer businessDetails={businessDetails} />
+      <div className="background">
+        <div className="blob" style={{ backgroundImage: `url(${blob})` }}></div>
+      </div>
+      <div className="wrapper container">
+        <Header businessDetails={businessDetails} />
+        <Main name={businessDetails.name} />
+        <Footer businessDetails={businessDetails} />
       </div>
     </>
   )
