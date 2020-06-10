@@ -4,7 +4,6 @@ import { CSSTransition } from "react-transition-group"
 const SectionContent = props => {
   const { children, eventKey, context, html } = props
   const { activeEventKey } = useContext(context)
-  const [windowSize, setWindowSize ] = useState(window.innerWidth)
   const duration = 300
 
   const onEnter = (node) => {

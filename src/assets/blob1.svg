@@ -1,7 +1,7 @@
 <svg width="1700" height="1700" viewBox="0 0 1700 1700" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g style="mix-blend-mode:multiply" opacity="0.6" filter="url(#filter0_f)">
 <path d="M430.905 363.112C157.96 438.593 54.0959 476.844 37.993 621.523C20.279 860.464 244.916 792.909 282.758 918.118C320.6 1043.33 224.787 1386.1 579.052 1506.87C933.318 1627.64 1220.76 1366.56 1206.26 1058.42C1191.77 750.284 1413.19 766.268 1409.97 363.112C1406.74 -40.0441 991.288 -5.3449 855.218 127.79C744.866 235.762 703.85 287.631 430.905 363.112Z" fill="#AC5024">
-<animate 
+<animateTransform 
 dur="60s" 
 repeatCount="indefinite" 
 attributeName="d" 
