@@ -1,3 +1,5 @@
+@import "colors";
+
 // Basic stuff
 
 * {
@@ -13,6 +15,16 @@ img {
   max-width: 100%;
 }
 
+.outer {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+}
+.outer > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -23,8 +35,9 @@ img {
 .wrapper {
   margin: auto;
   max-width: 1200px;
+  min-height: 100vh;
   justify-content: center;
-  height: 100%;
+  overflow: hidden;
 }
 
 // Header and footer layout
@@ -40,6 +53,7 @@ footer {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 3;
 }
 
 header {
@@ -66,7 +80,8 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  overflow-y: visible;
+  z-index: 2;
 }
 
 // Menu layout
@@ -74,6 +89,7 @@ main {
 .section--content {
   text-align: center;
   justify-self: center;
+  overflow-y: scroll;
 }
 
 
@@ -93,15 +109,20 @@ main {
 .section--title {
   cursor: pointer;
   text-align: center;
-  padding: 1.5em 0;
-}
-
-.section--main {
-  padding: 0;
-  padding-bottom: 1em;
 }
 
 .reservations {
-  max-width: 400px;
+  width: 70%;
   margin: auto;
 }
+
+.active {
+  color: $accent;
+}
+
+.blob-wrapper {
+  z-index: 1;
+  min-height: 100vh;
+  max-height: 100%;
+}
+

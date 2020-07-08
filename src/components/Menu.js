@@ -1,11 +1,11 @@
-import React, {useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import MenuContextProvider from "./MenuContextProvider"
 import SectionToggle from "./SectionToggle"
 import SectionContent from "./SectionContent"
 import SectionContainer from "./SectionContainer"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Menu = () => {
+const Menu = ({ onClick }) => {
   const [windowSize, setWindowSize] = useState()
 
   useEffect(() => {
@@ -38,21 +38,25 @@ const Menu = () => {
   `)
   const sections = data.allMarkdownRemark.edges
 
-  const mobileSections = sections.map((section, index) => (
-    <SectionContainer key={index}>
-      <SectionToggle eventKey={index} context={context}>
-        <h3>{section.node.frontmatter.title}</h3>
-      </SectionToggle>
-      <SectionContent
-        eventKey={index}
-        context={context}
-        html={section.node.html}
-      ></SectionContent>
-    </SectionContainer>
-  ))
-  
+  const mobileSections = (
+    <>
+      {sections.map((section, index) => (
+        <SectionContainer key={index}>
+          <SectionToggle eventKey={index} context={context}>
+            <h3>{section.node.frontmatter.title}</h3>
+          </SectionToggle>
+          <SectionContent
+            eventKey={index}
+            context={context}
+            html={section.node.html}
+          ></SectionContent>
+        </SectionContainer>
+      ))}
+    </>
+  )
+
   const desktopSections = (
-    <div className="menu">
+    <>
       {sections.map((section, index) => (
         <div className="section container" key={index}>
           <div className="section--title active">
@@ -64,16 +68,12 @@ const Menu = () => {
           ></div>
         </div>
       ))}
-    </div>
+    </>
   )
 
   return (
     <MenuContextProvider Context={context}>
-      { windowSize > 1000 ? 
-        desktopSections
-      : 
-        mobileSections
-    }
+      {windowSize > 768 ? desktopSections : mobileSections }
     </MenuContextProvider>
   )
 }

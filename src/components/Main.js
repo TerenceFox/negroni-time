@@ -1,4 +1,4 @@
-import React from "react"
+import React, { createContext } from "react"
 import Menu from "./Menu"
 import MenuContextProvider from "./MenuContextProvider"
 import SectionToggle from "./SectionToggle"
@@ -7,16 +7,22 @@ import SectionContainer from "./SectionContainer"
 import Reservations from './Reservations'
 
 const Main = ({ name }) => {
-  const context = React.createContext()
+  const context = createContext()
+  
   return (
     <main>
       <MenuContextProvider Context={context}>
         <SectionContainer>
-          <SectionToggle eventKey={0} context={context}>
-            <h2 className="section--main">menus</h2>
-          </SectionToggle>
+            <SectionToggle
+              eventKey={0}
+              context={context}
+            >
+              <h2>menu</h2>
+            </SectionToggle>
           <SectionContent eventKey={0} context={context}>
+            <div className="menu">
               <Menu />
+            </div>
           </SectionContent>
         </SectionContainer>
         <SectionToggle eventKey={1} context={context}>

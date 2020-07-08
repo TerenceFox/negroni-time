@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext } from "react"
 import { CSSTransition } from "react-transition-group"
 
 const SectionContent = props => {
