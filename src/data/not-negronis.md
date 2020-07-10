@@ -5,10 +5,10 @@ date: "2020-05-13"
 title: "not negronis"
 ---
 
-#### the negroni - 12
+#### the cobble hill - 12
 
-gin/campari/vermount
+cucumber/rye/amaro montenegro
 
-#### the other negroni - 12
+#### the pencillin - 12
 
-gin/campari/vermouth
+scotch/lemon/ginger

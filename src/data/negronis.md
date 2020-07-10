@@ -7,8 +7,8 @@ title: "negronis"
 
 #### the negroni - 12
 
-gin/campari/vermount
-
-#### the other negroni - 12
-
 gin/campari/vermouth
+
+#### the white negroni - 12
+
+gin/lillet/dry vermouth

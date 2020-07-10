@@ -5,6 +5,7 @@ import SectionToggle from "./SectionToggle"
 import SectionContent from "./SectionContent"
 import SectionContainer from "./SectionContainer"
 import Reservations from './Reservations'
+import SocialMediaContainer from './SocialMediaContainer'
 
 const Main = ({ name }) => {
   const context = createContext()
@@ -35,6 +36,7 @@ const Main = ({ name }) => {
           <Reservations context={context} eventKey={2} />
         </SectionContainer>
       </MenuContextProvider>
+      <SocialMediaContainer />
     </main>
   )
 }

@@ -11,22 +11,16 @@
 }
 
 @font-face {
-  font-family: 'AuthenticSans';
-  src: url('../fonts/AUTHENTICSans-60.otf') format('opentype');
+  font-family: 'Mars';
+  src: url('../fonts/marsextended-regular.otf') format('opentype');
   font-weight: 400;
-}
-
-@font-face {
-  font-family: 'AuthenticSans';
-  src: url('../fonts/AUTHENTICSans-150.otf') format('opentype');
-  font-weight: 600;
 }
 
 @mixin body-font() {
   font-size: .8rem;
   letter-spacing: .1em;
   line-height: 1.4em;
-  font-family: 'AuthenticSans';
+  font-family: 'Mars';
   color: $white;
 }
 
@@ -37,9 +31,8 @@ body {
 
 a {
   text-decoration: none;
-  color: $accent2;
+  color: $accent;
 }
-
 
 @mixin headers() {
   height: 100%;
@@ -75,11 +68,9 @@ h3 {
 
 h4 {
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: .6em;
+  font-weight: 400;
   text-transform: uppercase;
   @include body-font();
-  
 }
 
 
@@ -87,11 +78,21 @@ p {
   margin-bottom: 2em;
 }
 
-.details {
-  font-size: .8rem;
+.details{
+  font-size: .7rem;
   letter-spacing: .2em;
   color: $accent2;
   text-transform: uppercase;
+}
+
+.details > a {
+  color: $accent2;
+}
+
+@media (min-width: 1200px) {
+  .details {
+    font-size: 1rem;
+  }
 }
 
 .section--title-active > h3{

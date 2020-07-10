@@ -35,12 +35,16 @@ const App = ({ data }) => {
   return (
     <>
       <Helmet>
-        <title>Negroni Time</title>
-        <meta name="description" content="Helmet application" />
-        <meta
-          name="viewport"
-          content="width=device-width, height=device-height, initial-scale=1"
-        />
+          <title>Negroni Time</title>
+          <meta name="description" content="Helmet application" />
+          <meta
+            name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1"
+          />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Helmet>
       <div className="outer">
         <Div100vh className="container header-footer">
@@ -50,6 +54,8 @@ const App = ({ data }) => {
         <Div100vh className="blob-wrapper">
           <svg
             className="blob"
+            width="100%"
+            height="100%"
             viewBox="150 0 800 1000"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -66,8 +72,10 @@ const App = ({ data }) => {
           </svg>
           <svg
             className="blob-xl"
-            viewBox="0 0 1700 1900"
+            viewBox="0 0 1000 1200"
             fill="none"
+            width="100%"
+            height="100%"
             xmlns="http://www.w3.org/2000/svg"
             style={{ "mix-blend-mode": "multiply" }}
             opacity="0.8"
